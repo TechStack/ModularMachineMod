@@ -1,0 +1,10 @@
+{
+"variants":{
+"facing=north":{"model":"modularmachinemod:block/armor"}, 
+"facing=south": { "model": "modularmachinemod:block/armor", "y": 180 },   
+"facing=west": { "model": "modularmachinemod:block/armor", "y": 270 },   
+"facing=east": { "model": "modularmachinemod:block/armor", "y": 90 },   
+"facing=up": { "model": "modularmachinemod:block/armor", "x": -90 },   
+"facing=down": { "model": "modularmachinemod:block/armor", "x": 90 }  
+}
+}

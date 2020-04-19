@@ -1,0 +1,10 @@
+{
+"variants":{
+"facing=north":{"model":"modularmachinemod:block/drill"}, 
+"facing=south": { "model": "modularmachinemod:block/drill", "y": 180 },   
+"facing=west": { "model": "modularmachinemod:block/drill", "y": 270 },   
+"facing=east": { "model": "modularmachinemod:block/drill", "y": 90 },   
+"facing=up": { "model": "modularmachinemod:block/drill", "x": -90 },   
+"facing=down": { "model": "modularmachinemod:block/drill", "x": 90 }  
+}
+}
