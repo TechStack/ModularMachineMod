@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.projectreddog.modularmachinemod.init.ModBlocks;
+import com.projectreddog.modularmachinemod.init.ModItems;
 import com.projectreddog.modularmachinemod.proxy.ClientProxy;
 import com.projectreddog.modularmachinemod.proxy.IProxy;
 import com.projectreddog.modularmachinemod.proxy.ServerProxy;
@@ -43,7 +44,7 @@ public class ModularMachineMod {
 			// register a new block here
 			LOGGER.info("HELLO from Register ITEM");
 			ModBlocks.RegisterBlockItems(event);
-			// ModItems.RegisterItems(event);
+			ModItems.RegisterItems(event);
 
 		}
 	}
