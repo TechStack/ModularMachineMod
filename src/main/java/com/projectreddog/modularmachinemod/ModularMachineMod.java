@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.projectreddog.modularmachinemod.init.ModBlocks;
+import com.projectreddog.modularmachinemod.init.ModEntities;
 import com.projectreddog.modularmachinemod.init.ModItems;
 import com.projectreddog.modularmachinemod.proxy.ClientProxy;
 import com.projectreddog.modularmachinemod.proxy.IProxy;
@@ -11,20 +12,29 @@ import com.projectreddog.modularmachinemod.proxy.ServerProxy;
 import com.projectreddog.modularmachinemod.reference.Reference;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(Reference.MODID)
 public class ModularMachineMod {
 	public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
 	public static final Logger LOGGER = LogManager.getLogger();
 
-	private void setup(final FMLCommonSetupEvent event) {
+	public ModularMachineMod() {
+
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(ModularMachineMod::setup);
+
+	}
+
+	public static void setup(final FMLCommonSetupEvent event) {
 		proxy.init();
+
 		// ModNetwork.init();
 	}
 
@@ -47,5 +57,13 @@ public class ModularMachineMod {
 			ModItems.RegisterItems(event);
 
 		}
+
+		@SubscribeEvent
+		public static void onEntityRegistry(final RegistryEvent.Register<EntityType<?>> event) {
+			// register a new block here
+			LOGGER.info("HELLO from Register Enityt");
+			ModEntities.RegisterEntites(event);
+		}
+
 	}
 }

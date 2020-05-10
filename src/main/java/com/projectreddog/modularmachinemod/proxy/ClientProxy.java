@@ -1,7 +1,11 @@
 package com.projectreddog.modularmachinemod.proxy;
 
+import com.projectreddog.modularmachinemod.client.renderer.ModularMachineRenderer;
+import com.projectreddog.modularmachinemod.init.ModEntities;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy implements IProxy {
 
@@ -13,7 +17,7 @@ public class ClientProxy implements IProxy {
 	@Override
 	public void init() {
 		// Entity Renderers
-		// RenderingRegistry.registerEntityRenderingHandler(MinionEntity.class, MinionRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntities.MODULARMACHINE, ModularMachineRenderer::new);
 
 		// Client Gui
 		// ScreenManager.registerFactory(ModContainers.BASIC_CONTAINER, BasicScreen::new);

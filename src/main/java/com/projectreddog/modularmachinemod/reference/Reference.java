@@ -9,4 +9,6 @@ public class Reference {
 	// ITEM REGISTRY NAMES
 	public static final String REGISTRY_NAME_WRENCH_ITEM = "wrench";
 
+	// Entity Registry names
+	public static final String REIGSTRY_NAME_MODULAR_MACHINE_ENTITY = "modularmachine";
 }
